@@ -45,7 +45,16 @@ export default function Details({ navigation, route }) {
       <PlanetHeader backbutton={true} />
       <ScrollView>
         <View style={styles.imageView}>{renderImage(name)}</View>
-        
+        <View style={styles.detailView}>
+          <Text preset="h1" style={styles.name}>
+            {name}
+          </Text>
+          <Text style={styles.description}>{description}</Text>
+          <Pressable style={styles.source}>
+            <Text>Source : </Text>
+            <Text preset="h4" style={styles.wikipedia}> Wikipedia</Text>
+          </Pressable>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -61,5 +70,29 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  
+  detailView: {
+    marginTop: spacing[10],
+    marginHorizontal: spacing[6],
+    alignItems: "center",
+  },
+  name: {
+    marginTop: spacing[6],
+    textTransform: "uppercase",
+    textAlign: "center",
+  },
+  description: {
+    textAlign: "justify",
+    padding: spacing [2],
+    marginTop: spacing[5],
+    lineHeight: 25
+  },
+  source: {
+    padding: spacing[8],
+    flexDirection: "row",
+    alignItems:'center'
+  },
+  wikipedia: {
+    fontWeight: "bold",
+    textDecorationLine:"underline"
+  }
 });
