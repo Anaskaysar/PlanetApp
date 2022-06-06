@@ -10,22 +10,23 @@ I wanted to create it in React Native. Finally did it.
 
 # ScreenShot
 
-
 #### Flutter App Screenshots
 
 <table>
   <tr>
-    <td>First Screen Page</td>
-     <td>Holiday Mention</td>
-     <td>Present day in purple and selected day in pink</td>
+    <td>Home Screen</td>
+     <td>Search Bar </td>
   </tr>
   <tr>
-    <td><img src="assets/Screenshots/Home.PNG" width=270 height=480></td>
-    <td><img src="assets/Screenshots/Details_Top.PNG" width=270 height=480></td>
+    <td><img src="assets/Screenshots/Home.PNG" width=400 height=480></td>
+     <td><img src="assets/Screenshots/Search1.jpg" width=400 height=40></td>
   </tr>
   <tr>
-    <td><img src="assets/Screenshots/Details_bottom.PNG" width=270 height=480></td>
-    <td><img src="assets/Screenshots/Search1.jpg" width=270 height=480></td>
+    <td>Details_Screen Top Side</td>
+     <td>Details_Screen Bottom Side</td>
+  </tr>
+  <tr>
+    <td><img src="assets/Screenshots/Details_Top.PNG" width=400 height=480></td>
+    <td><img src="assets/Screenshots/Details_bottom.PNG" width=400 height=480></td>  
   </tr>
  </table>
-
