@@ -9,8 +9,6 @@ I wanted to create it in React Native. Finally did it.
 ![](assets/Screenshots/screen_play.gif)
 
 # ScreenShot
-![](assets/Screenshots/Home.PNG)
-![](assets/Screenshots/Details_Top.PNG)
-![](assets/Screenshots/Details_bottom.PNG)
-![](assets/Screenshots/Search1.jpg)
-![](assets/Screenshots/Search2.jpg)
+![](assets/Screenshots/Home.PNG) ![](assets/Screenshots/Details_Top.PNG)
+
+![](assets/Screenshots/Details_bottom.PNG) ![](assets/Screenshots/Search1.jpg)
