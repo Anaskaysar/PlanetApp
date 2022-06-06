@@ -4,13 +4,13 @@ import {
   StyleSheet,
   FlatList,
   Pressable,
+  TextInput,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import PlanetHeader from "../components/text/PlanetHeader";
 import { colors } from "../theme/colors";
 import { PLANET_LIST } from "../data/Planet-List";
 import Text from "../components/text/text";
-//import { keyExtractor } from "react-native/Libraries/Lists/VirtualizeUtils";
 import { spacing } from "../theme/spacing";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -37,20 +37,37 @@ const PlanetItem = ({ item }) => {
   );
 };
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
+  const [list, setList] = useState(PLANET_LIST);
+
   const renderItem = ({ item }) => {
     return <PlanetItem item={item} />;
+  };
+
+  const searchFilter = (text) => {
+    const filteredList = PLANET_LIST.filter((item) => {
+      const itemName = item.name.toLowerCase();
+      const userTypedText = text.toLowerCase();
+      return itemName.indexOf(userTypedText) > -1;
+    });
+    setList(filteredList);
   };
   return (
     <SafeAreaView style={styles.container}>
       <PlanetHeader />
+      <TextInput
+        placeholder="Type The Planet Name"
+        placeholderTextColor={colors.white}
+        autoCorrect={false}
+        style={styles.searchinput}
+        onChangeText={(text) => searchFilter(text)}
+      />
       <FlatList
         contentContainerStyle={styles.list}
-        data={PLANET_LIST}
+        data={list}
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
-        ItemSeparatorComponent={() => <View style={styles.separator} />
-      }
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
     </SafeAreaView>
   );
@@ -80,8 +97,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   separator: {
-    // padding: spacing[4],
     borderBottomWidth: 0.5,
     borderBottomColor: colors.white,
+  },
+  searchinput: {
+    padding: spacing[4],
+    color: colors.white,
+    borderBottomColor: colors.white,
+    borderBottomWidth: 1,
+    margin: spacing[5],
   },
 });
