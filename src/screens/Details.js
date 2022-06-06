@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   Pressable,
+  Linking,
 } from "react-native";
 import React from "react";
 import PlanetHeader from "../components/text/PlanetHeader";
@@ -32,12 +33,19 @@ const PlanetSection = ({ title, value }) => {
   );
 };
 
-export default function Details({ navigation, route }) {
+export default function Details({ route }) {
   const planet = route.params.planet;
-  const { name, description, rotationTime, revolutionTime, radius, avgTemp } =
-    planet;
+  const {
+    name,
+    description,
+    rotationTime,
+    revolutionTime,
+    radius,
+    avgTemp,
+    wikiLink,
+  } = planet;
 
-  const renderImage = (name) => {
+  const renderImage = () => {
     switch (name) {
       case "mercury":
         return <MercurySvg />;
@@ -53,25 +61,27 @@ export default function Details({ navigation, route }) {
         return <NeptuneSvg />;
       case "uranus":
         return <UranusSvg />;
-      case venus:
+      case "venus":
         return <VenusSvg />;
     }
   };
 
+  const onPressLink = () => {
+    Linking.openURL(wikiLink);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <PlanetHeader backbutton={true} />
       <ScrollView>
-        <View style={styles.imageView}>{renderImage(name)}</View>
+        <View style={styles.imageView}>{renderImage()}</View>
         <View style={styles.detailView}>
           <Text preset="h1" style={styles.name}>
             {name}
           </Text>
           <Text style={styles.description}>{description}</Text>
-          <Pressable style={styles.source}>
+          <Pressable onPress={onPressLink} style={styles.source}>
             <Text>Source : </Text>
             <Text preset="h4" style={styles.wikipedia}>
-              {" "}
               Wikipedia
             </Text>
           </Pressable>
@@ -129,6 +139,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing[4],
     marginHorizontal: spacing[6],
     marginBottom: spacing[4],
-    backgroundColor: colors.darkGrey
+    borderWidth: 1,
+    borderColor: colors.grey,
   },
 });

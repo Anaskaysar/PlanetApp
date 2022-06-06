@@ -10,7 +10,6 @@ import PlanetHeader from "../components/text/PlanetHeader";
 import { colors } from "../theme/colors";
 import { PLANET_LIST } from "../data/Planet-List";
 import Text from "../components/text/text";
-import { keyExtractor } from "react-native/Libraries/Lists/VirtualizeUtils";
 import { spacing } from "../theme/spacing";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
