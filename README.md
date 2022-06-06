@@ -9,6 +9,23 @@ I wanted to create it in React Native. Finally did it.
 ![](assets/Screenshots/screen_play.gif)
 
 # ScreenShot
-![](assets/Screenshots/Home.PNG) ![](assets/Screenshots/Details_Top.PNG)
 
-![](assets/Screenshots/Details_bottom.PNG) ![](assets/Screenshots/Search1.jpg)
+
+#### Flutter App Screenshots
+
+<table>
+  <tr>
+    <td>First Screen Page</td>
+     <td>Holiday Mention</td>
+     <td>Present day in purple and selected day in pink</td>
+  </tr>
+  <tr>
+    <td><img src="assets/Screenshots/Home.PNG" width=270 height=480></td>
+    <td><img src="assets/Screenshots/Details_Top.PNG" width=270 height=480></td>
+  </tr>
+  <tr>
+    <td><img src="assets/Screenshots/Details_bottom.PNG" width=270 height=480></td>
+    <td><img src="assets/Screenshots/Search1.jpg" width=270 height=480></td>
+  </tr>
+ </table>
+
