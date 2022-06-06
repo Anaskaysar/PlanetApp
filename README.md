@@ -19,7 +19,7 @@ I wanted to create it in React Native. Finally did it.
   </tr>
   <tr>
     <td><img src="assets/Screenshots/Home.PNG" width=400 height=480></td>
-     <td><img src="assets/Screenshots/Search1.jpg" width=400 height=40></td>
+     <td><img src="assets/Screenshots/Search1.jpg" width=400 height=480></td>
   </tr>
   <tr>
     <td>Details_Screen Top Side</td>
